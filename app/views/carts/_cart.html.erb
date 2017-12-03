@@ -1,0 +1,16 @@
+<h4>Cart:</h4>   
+<table>
+    <% @cart.lineitems.each do |item|%>         
+    <tr>
+        <td><%= item.quantity %></td>
+        <td><%=item.item.name %></td>
+        <td class='item_price'><%=number_to_currency(item.item.price) %></td>
+    </tr>    
+    <%end%>    
+    <tr class='total_line'>
+        <td colspan = "2">Total</td>
+        <td class='total_cell'><%=number_to_currency(@cart.total_price)%></td>
+    </tr>   
+</table>
+<%= button_to 'Check Out', new_order_path, method: :get, class: 'btn btn-success btn-block' %> 
+<%= button_to 'Empty Cart', @cart, method: :delete, class: 'btn btn-warning btn-block', data: {confirm: 'Are you sure?'} %> 

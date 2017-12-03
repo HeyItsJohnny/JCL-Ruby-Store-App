@@ -1,0 +1,34 @@
+
+<h2>Item Record: <%= @item.name %></h2>
+<div class="field form-group"> 
+  <strong>Name:</strong>
+  <%= @item.name %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Description:</strong>
+  <%= @item.description %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Image:</strong>
+  <%= @item.image %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Price:</strong>
+  <%= @item.price %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Created On:</strong>
+  <%= @item.created_at %>
+</div>
+
+<div class="field form-group"> 
+  <strong>Updated On:</strong>
+  <%= @item.updated_at %>
+</div>
+<%= link_to 'Edit', edit_item_path(@item), class: 'btn btn-warning btn-block' %>
+<br>
+<a class="btn btn-info btn-block" href="/items">Admin Items</a>

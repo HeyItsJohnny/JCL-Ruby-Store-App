@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+    <h1>Product Catalog</h1> 
+    <%= render 'form' %>
+
+    <% @items.each do |item| %> 
+    <div class="entry">     
+        <%= image_tag(item.image) %>     
+        <h3><%= item.name %></h3>    
+        <%= sanitize(item.description) %>     
+        <div class="price_line">       
+            <span class="price"><%= number_to_currency(item.price) %></span> 
+            <%= button_to'Add to Cart', lineitems_path(item_id: item), class: 'add_to_cart', remote:true %>
+        </div>   
+    </div> 
+    <% end %> 

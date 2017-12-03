@@ -1,0 +1,18 @@
+<h1>Listing carts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carts.each do |cart| %>
+      <tr>
+        <td><%= cart.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
